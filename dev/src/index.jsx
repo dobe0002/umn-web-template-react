@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import React from 'react';
 import { render } from 'react-dom';
 import { UmnHeader, UmnFooter, AppBanner } from '../../src/index.jsx';

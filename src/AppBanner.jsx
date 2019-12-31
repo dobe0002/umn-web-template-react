@@ -31,7 +31,8 @@ const HeaderWrapper = styled.div`
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 `;
 const AppBanner = props => {
-  return <HeaderWrapper role='contentinfo'>{props.appTitle}</HeaderWrapper>;
+  const { appTitle } = props;
+  return <HeaderWrapper role='contentinfo'>{appTitle}</HeaderWrapper>;
 };
 AppBanner.propTypes = {
   appTitle: PropTypes.string.isRequired

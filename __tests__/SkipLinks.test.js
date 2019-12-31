@@ -1,8 +1,11 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { configure, shallow, mount } from 'enzyme';
-import SkipLinks from '../src/HeaderFooter/SkipLinks';
 import Adapter from 'enzyme-adapter-react-16';
+import SkipLinks from '../src/HeaderFooter/SkipLinks';
+
 const { axe, toHaveNoViolations } = require('jest-axe');
+
 expect.extend(toHaveNoViolations);
 configure({ adapter: new Adapter() });
 
@@ -11,14 +14,18 @@ describe('Skip Links', () => {
     const temp = (
       <div>
         <SkipLinks mainNavId='foo' mainContentId='bar' />
-        <a id='foo' />
-        <a id='bar' />
+        <a id='foo' href='item1'>
+          item1
+        </a>
+        <a id='bar' href='item2'>
+          item2
+        </a>
       </div>
     );
     const skipLinks = mount(temp);
     const results = await axe(skipLinks.getDOMNode());
 
-    console.log('Axe violations', results.violations);
+    // console.log('Axe violations', results.violations);
 
     expect(results).toHaveNoViolations();
   });

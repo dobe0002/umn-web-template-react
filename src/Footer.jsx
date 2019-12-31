@@ -1,7 +1,8 @@
+/* eslint-disable import/extensions */
 import React from 'react';
-import MainNavLinks from './HeaderFooter/MainNavLinks.jsx';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import MainNavLinks from './HeaderFooter/MainNavLinks.jsx';
 
 const FooterWrapper = styled.footer`
   font-family: Helvetica, 'Helvetica Neue', Futura, Verdana, Geneva, sans-serif;
@@ -17,13 +18,17 @@ const Link = styled.a`
   text-decoration: underline;
 `;
 const Footer = props => {
+  const { year } = props;
   return (
     <FooterWrapper role='contentinfo'>
       <MainNavLinks mode='footer' />
       <p>
-        &copy; <span className='year'>{props.year}</span> Regents of the
-        University of Minnesota. All rights reserved. The University of
-        Minnesota is an equal opportunity educator and employer.{' '}
+        &copy;
+        <span className='year'>{year}</span>
+        <span> </span>
+        Regents of the University of Minnesota. All rights reserved. The
+        University of Minnesota is an equal opportunity educator and employer.
+        <span> </span>
         <Link href='http://privacy.umn.edu'>Privacy Statement</Link>
       </p>
     </FooterWrapper>

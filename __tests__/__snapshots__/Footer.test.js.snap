@@ -8,14 +8,19 @@ exports[`UMN Footer Footer renders correctly 1`] = `
     mode="footer"
   />
   <p>
-    © 
+    ©
     <span
       className="year"
     >
       1234
     </span>
-     Regents of the University of Minnesota. All rights reserved. The University of Minnesota is an equal opportunity educator and employer.
-     
+    <span>
+       
+    </span>
+    Regents of the University of Minnesota. All rights reserved. The University of Minnesota is an equal opportunity educator and employer.
+    <span>
+       
+    </span>
     <styled.a
       href="http://privacy.umn.edu"
     >

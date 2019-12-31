@@ -30,24 +30,26 @@ const Li = styled.li`
 `;
 
 const SkipLinks = props => {
+  const { mainNavId, mainContentId } = props;
   if (props.mainNavId || props.mainContentId) {
     return (
       <Wrapper className='headerLinks'>
         <Ul>
-          {props.mainNavId && (
+          {mainNavId && (
             <Li>
-              <a href={`#${props.mainNavId}`}>Main navigation</a>
+              <a href={`#${mainNavId}`}>Main navigation</a>
             </Li>
           )}
-          {props.mainContentId && (
+          {mainContentId && (
             <Li>
-              <a href={`#${props.mainContentId}`}>Main content</a>
+              <a href={`#${mainContentId}`}>Main content</a>
             </Li>
           )}
         </Ul>
       </Wrapper>
     );
-  } else return '';
+  }
+  return '';
 };
 
 SkipLinks.propTypes = {

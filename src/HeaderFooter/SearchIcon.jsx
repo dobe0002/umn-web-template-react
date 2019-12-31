@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchIcon = props => {
+const SearchIcon = () => {
   return (
     <svg
       className='search-form__button-icon'

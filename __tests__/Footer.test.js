@@ -1,8 +1,11 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { configure, shallow, mount } from 'enzyme';
-import Footer from '../src/Footer';
 import Adapter from 'enzyme-adapter-react-16';
+import Footer from '../src/Footer';
+
 const { axe, toHaveNoViolations } = require('jest-axe');
+
 expect.extend(toHaveNoViolations);
 configure({ adapter: new Adapter() });
 
@@ -11,7 +14,7 @@ describe('UMN Footer', () => {
     const footer = mount(<Footer />);
     const results = await axe(footer.getDOMNode());
 
-    console.log('Axe violations', results.violations);
+    // console.log('Axe violations', results.violations);
 
     expect(results).toHaveNoViolations();
   });

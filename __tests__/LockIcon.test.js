@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { configure, shallow } from 'enzyme';
-import LockIcon from '../src/HeaderFooter/LockIcon';
 import Adapter from 'enzyme-adapter-react-16';
+import LockIcon from '../src/HeaderFooter/LockIcon';
 
 configure({ adapter: new Adapter() });
 

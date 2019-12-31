@@ -1,6 +1,7 @@
 // const webpack = require('webpack');
-const pkg = require('./package.json');
 const path = require('path');
+const pkg = require('./package.json');
+
 const libraryName = pkg.name;
 module.exports = {
   entry: path.join(__dirname, './src/index.jsx'),

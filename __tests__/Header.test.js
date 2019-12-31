@@ -1,8 +1,11 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { configure, shallow, mount } from 'enzyme';
-import Header from '../src/Header';
 import Adapter from 'enzyme-adapter-react-16';
+import Header from '../src/Header';
+
 const { axe, toHaveNoViolations } = require('jest-axe');
+
 expect.extend(toHaveNoViolations);
 
 configure({ adapter: new Adapter() });
@@ -12,7 +15,7 @@ describe('UMN Header', () => {
     const header = mount(<Header />);
     const results = await axe(header.getDOMNode());
 
-    console.log('Axe violations', results.violations);
+    // console.log('Axe violations', results.violations);
 
     expect(results).toHaveNoViolations();
   });

@@ -1,12 +1,13 @@
+/* eslint-disable import/extensions */
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import WordMark from './HeaderFooter/WordMark.jsx';
 import MainNavLinks from './HeaderFooter/MainNavLinks.jsx';
 import SearchIcon from './HeaderFooter/SearchIcon.jsx';
 import SkipLinks from './HeaderFooter/SkipLinks.jsx';
-import styled from 'styled-components';
 
-/** ** Header  *****/
+/** ** Header  **** */
 
 const HeaderWrapper = styled.header`
   position: relative;
@@ -22,7 +23,7 @@ const HeaderWrapper = styled.header`
     min-height: 90px;
   }
 `;
-/** ** Search  *****/
+/** ** Search  **** */
 const Form = styled.form`
   display: block;
   position: absolute;
@@ -53,12 +54,10 @@ const Button = styled.button`
 `;
 
 const Header = props => {
+  const { mainContentId, mainNavId } = props;
   return (
     <HeaderWrapper>
-      <SkipLinks
-        mainContentId={props.mainContentId}
-        mainNavId={props.mainNavId}
-      />
+      <SkipLinks mainContentId={mainContentId} mainNavId={mainNavId} />
       <div>
         <a href='http://umn.edu/'>
           <WordMark />
@@ -90,6 +89,10 @@ const Header = props => {
 Header.propTypes = {
   mainNavId: PropTypes.string,
   mainContentId: PropTypes.string
+};
+Header.defaultProps = {
+  mainNavId: undefined,
+  mainContentId: undefined
 };
 
 export default Header;

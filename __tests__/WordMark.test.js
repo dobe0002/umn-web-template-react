@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { configure, shallow } from 'enzyme';
-import WordMark from '../src/HeaderFooter/WordMark';
 import Adapter from 'enzyme-adapter-react-16';
+import WordMark from '../src/HeaderFooter/WordMark';
 
 configure({ adapter: new Adapter() });
 
