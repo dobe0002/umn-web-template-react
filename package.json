@@ -78,7 +78,8 @@
       "!**/coverage/**",
       "!**/webpack.config.js",
       "!**/build/**",
-      "!**/dev/**"
+      "!**/dev/**",
+      "!**/utils/**"
     ]
   },
   "dependencies": {}
