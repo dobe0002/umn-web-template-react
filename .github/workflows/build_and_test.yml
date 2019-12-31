@@ -1,0 +1,24 @@
+name: Build and test
+
+on: [push]
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - name: Install and build
+        run: |
+          npm ci
+          npm run build
+      - name: Tests
+        run: npm run test
+      - name: Code quality
+        run: |
+          npm run eslint
+          # npm run npmAuditJson
+          # node utils/testCoverage.js
