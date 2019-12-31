@@ -17,8 +17,9 @@ jobs:
           npm run build
       - name: Tests
         run: npm run test
-      - name: Code quality
-        run: |
-          npm run eslint
-          npm run npmAuditJson
-          node utils/testCoverage.js
+      - name: Test coverage
+        run: node utils/testCoverage.js
+      - name: Linting
+        run: npm run eslint
+      - name: Security audit
+        run: npm run npmAuditJson
