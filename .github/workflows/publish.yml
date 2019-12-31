@@ -13,7 +13,6 @@ jobs:
           node-version: '12.x'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@dobe0002' # Defaults to the user or organization that owns the workflow file
-      -name
       - name: Install and build
         run: |
           npm install
