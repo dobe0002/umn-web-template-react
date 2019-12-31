@@ -1,8 +1,9 @@
 {
-  "name": "umn-web-template-react",
-  "version": "0.1.0",
+  "name": "@dobe0002/umn-web-template-react",
+  "version": "0.1.1",
   "description": "",
   "main": "build/bundle.js",
+  "repository": "https://github.com/dobe0002/umn-web-template-react",
   "peerDependencies": {
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
