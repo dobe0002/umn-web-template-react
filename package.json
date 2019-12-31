@@ -69,7 +69,8 @@
     ],
     "coverageReporters": [
       "html",
-      "json-summary"
+      "json-summary",
+      "text-summary"
     ],
     "collectCoverageFrom": [
       "**/*.{js,jsx}",

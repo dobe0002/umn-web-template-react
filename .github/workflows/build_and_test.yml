@@ -20,5 +20,5 @@ jobs:
       - name: Code quality
         run: |
           npm run eslint
-          # npm run npmAuditJson
-          # node utils/testCoverage.js
+          npm run npmAuditJson
+          node utils/testCoverage.js
