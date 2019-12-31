@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Application Banner AppBanner renders correctly 1`] = `
+<styled.div
+  role="contentinfo"
+>
+  My super duper app
+</styled.div>
+`;

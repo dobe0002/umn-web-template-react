@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skip Links Both skip links are displayed when passed 1`] = `
+<styled.div
+  className="headerLinks"
+>
+  <styled.ul>
+    <styled.li>
+      <a
+        href="#foo"
+      >
+        Main navigation
+      </a>
+    </styled.li>
+    <styled.li>
+      <a
+        href="#bar"
+      >
+        Main content
+      </a>
+    </styled.li>
+  </styled.ul>
+</styled.div>
+`;
+
+exports[`Skip Links Only main content skip links is it is only prop passed 1`] = `
+<styled.div
+  className="headerLinks"
+>
+  <styled.ul>
+    <styled.li>
+      <a
+        href="#bar"
+      >
+        Main content
+      </a>
+    </styled.li>
+  </styled.ul>
+</styled.div>
+`;
+
+exports[`Skip Links Only main nav skip links is it is only prop passed 1`] = `
+<styled.div
+  className="headerLinks"
+>
+  <styled.ul>
+    <styled.li>
+      <a
+        href="#foo"
+      >
+        Main navigation
+      </a>
+    </styled.li>
+  </styled.ul>
+</styled.div>
+`;
