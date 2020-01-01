@@ -1,7 +1,8 @@
 name: Publish Package
 on:
-  release:
-    types: [created]
+  [push]
+  #release:
+  # types: [created]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,8 +12,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@dobe0002' # Defaults to the user or organization that owns the workflow file
       - name: Install and build
         run: |
           npm install
@@ -25,6 +24,16 @@ jobs:
         run: npm run eslint
       - name: Security audit
         run: npm run npmAuditJson
+  publish:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@dobe0002' # Defaults to the user or organization that owns the workflow file
       - name: Publish
         run: npm publish
         env:
