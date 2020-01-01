@@ -4,6 +4,9 @@
   "description": "",
   "main": "build/bundle.js",
   "repository": "https://github.com/dobe0002/umn-web-template-react",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "peerDependencies": {
     "react": "^16.10.1",
     "react-dom": "^16.10.1",

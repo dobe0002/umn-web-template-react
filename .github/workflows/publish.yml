@@ -32,12 +32,14 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@dobe0002' # Defaults to the user or organization that owns the workflow file
       - name: Install and build
         run: |
           npm install
           npm run build
+      - name: Create NPMRC
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN_PUBLISH }}" > ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN}}
       - name: Publish
         run: npm publish
         env:
