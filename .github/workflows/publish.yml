@@ -1,0 +1,43 @@
+name: Publish Package
+on:
+  release:
+    types: [created]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Install and build
+        run: |
+          npm install
+          npm run build
+      - name: Tests
+        run: npm run test
+      - name: Test coverage
+        run: node utils/testCoverage.js
+      - name: Linting
+        run: npm run eslint
+      - name: Security audit
+        run: npm run npmAuditJson
+  publish:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: https://npm.pkg.github.com/
+          scope: '@your-github-username'
+      - name: Install and build
+        run: |
+          npm install
+          npm run build
+      - name: Publish
+        run: npm publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_PUBLISH }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN_PUBLISH }}

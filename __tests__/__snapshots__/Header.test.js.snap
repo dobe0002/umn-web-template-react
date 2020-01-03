@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UMN Header Header renders correctly 1`] = `
+<styled.header>
+  <SkipLinks />
+  <div>
+    <a
+      href="http://umn.edu/"
+    >
+      <WordMark
+        title="UofM Home page"
+        width="288px"
+      />
+    </a>
+    <MainNavLinks
+      color="#fff"
+      mode="header"
+    />
+  </div>
+  <styled.form
+    action="https://usearch.umn.edu/"
+    id="search-form"
+    name="gs"
+  >
+    <styled.input
+      aria-label="Search for"
+      maxLength="256"
+      name="query"
+      placeholder="Search"
+      type="text"
+    />
+    <styled.button
+      aria-label="Submit Search"
+      name="submit"
+      type="submit"
+      value="search"
+    >
+      <SearchIcon />
+    </styled.button>
+  </styled.form>
+</styled.header>
+`;
