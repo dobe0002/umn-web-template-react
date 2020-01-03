@@ -9,10 +9,13 @@ src
 .gitignore
 .npmignore
 webpack.config.js
+.github/*
+.git
 
 
 
 *.tgz
 .DS_Store
 /dev
+/util
 
