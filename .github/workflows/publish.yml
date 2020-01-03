@@ -1,14 +1,12 @@
 name: Publish Package
 on:
-  [push]
-  #release:
-  # types: [created]
+  release:
+  types: [created]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
@@ -38,10 +36,6 @@ jobs:
         run: |
           npm install
           npm run build
-      #- name: Create NPMRC
-      #  run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN_PUBLISH }}" > ~/.npmrc
-      #  env:
-      #    NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN}}
       - name: Publish
         run: npm publish
         env:
