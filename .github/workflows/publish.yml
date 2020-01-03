@@ -36,6 +36,8 @@ jobs:
         run: |
           npm install
           npm run build
+      - name: Reduce package.json file
+        run: node utils/resetPackageJson.js
       - name: Publish
         run: npm publish
         env:

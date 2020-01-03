@@ -13,9 +13,10 @@ webpack.config.js
 .git
 
 
-
+.prettierrc.json
 *.tgz
 .DS_Store
 /dev
-/util
+/utils
+package-lock.json
 
