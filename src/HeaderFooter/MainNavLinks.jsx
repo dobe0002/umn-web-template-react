@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 /* eslint-disable react/prop-types */
 /* eslint-disable import/extensions */
 import React from 'react';
@@ -5,8 +6,6 @@ import React from 'react';
 // import PropTypes from 'prop-types';  /* Disabling this so prop-types isn't needed as a dependency */
 
 import LockIcon from './icons/LockIcon.jsx';
-
-import './MainNavLinks.css'; /* Need to make a separate CSS  because it uses media queries */
 
 const MainNavLinks = (props) => {
   const { mode } = props;
@@ -21,20 +20,86 @@ const MainNavLinks = (props) => {
     displayMode === 'header'
       ? 'umnHeaderMainNavLinksA-header'
       : 'umnHeaderMainNavLinksA';
+
+  const MainNavLinksCSS = `
+      .umnHeaderMainNavLinksUl,
+.umnHeaderMainNavLinksUl-header {
+  margin: 0;
+  list-style-type: none;
+  display: none;
+}
+
+.umnHeaderMainNavLinksUl-header {
+  position: absolute;
+  right: 54px;
+  top: 8px;
+}
+
+@media (max-width: 775px) {
+  .umnHeaderMainNavLinksUl-header {
+    display: none;
+  }
+  .umnHeaderMainNavLinksUl {
+    display: block;
+  }
+}
+@media (min-width: 776px) {
+  .umnHeaderMainNavLinksUl-header {
+    display: block;
+  }
+  .umnHeaderMainNavLinksUl {
+    display: none;
+  }
+}
+
+.umnHeaderMainNavLinksLi {
+  margin: 0;
+  display: inline-block;
+  margin-left: 1.25rem;
+}
+
+.umnHeaderMainNavLinksA,
+.umnHeaderMainNavLinksA-header {
+  text-decoration: none;
+  color: #404d5b;
+}
+.umnHeaderMainNavLinksA-header {
+  color: #fff;
+}
+.umnHeaderMainNavLinksA:hover,
+.umnHeaderMainNavLinksA:focus {
+  text-decoration: underline;
+  color: #404d5b;
+}
+.umnHeaderMainNavLinksA-header:hover,
+.umnHeaderMainNavLinksA-header:focus {
+  text-decoration: underline;
+  color: #fff;
+}
+
+      `;
+
   return (
-    <ul className={ulClassName}>
-      <li className='umnHeaderMainNavLinksLi'>
-        <a href='http://onestop.umn.edu/' className={aClassName}>
-          One Stop
-        </a>
-      </li>
-      <li className='umnHeaderMainNavLinksLi'>
-        <a href='https://www.myu.umn.edu/' className={aClassName}>
-          <span>MyU </span>
-          <LockIcon color={displayMode === 'header' ? '#fff' : '#404d5b'} />
-        </a>
-      </li>
-    </ul>
+    <div>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: MainNavLinksCSS,
+        }}
+      />
+      <ul className={ulClassName}>
+        <li className='umnHeaderMainNavLinksLi'>
+          <a href='http://onestop.umn.edu/' className={aClassName}>
+            One Stop
+          </a>
+        </li>
+        <li className='umnHeaderMainNavLinksLi'>
+          <a href='https://www.myu.umn.edu/' className={aClassName}>
+            <span>MyU </span>
+            <LockIcon color={displayMode === 'header' ? '#fff' : '#404d5b'} />
+          </a>
+        </li>
+      </ul>
+    </div>
   );
 };
 

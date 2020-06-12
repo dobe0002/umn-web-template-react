@@ -25,11 +25,9 @@
     "jest-axe": "3.4.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.7",
-    "node-sass": "^4.14.1",
     "prettier": "2.0.5",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
-    "styled-components": "^4.4.0",
     "prop-types": "15.7.2",
     "react-scripts": "3.4.1",
     "sass": "^1.3.0",
@@ -58,9 +56,9 @@
     "lint:scss:all": "npm run lint:scss './**/*.+(css|scss)'",
     "lint:scss:fix:all": "npm run lint:scss -- --fix './**/*.+(css|scss)'",
     "----------------------------------------------------------3": "",
-    "buildPackage": "npm run build && npm pack",
+    "buildPackage": "npm run buildCompiled && npm pack",
     "checkCoverage": "node ./utils/testCoverage.js",
-    "npmAudit": "npm audit --audit-level=high" 
+    "npmAudit": "npm audit --audit-level=high"
   },
   "prettier": {
     "singleQuote": true,
@@ -116,7 +114,9 @@
       "html",
       "json-summary"
     ],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "browserslist": {
     "production": [

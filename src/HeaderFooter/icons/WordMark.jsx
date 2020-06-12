@@ -9,7 +9,7 @@ const WordMark = (props) => {
   const displayWidth = width === undefined || width === '' ? '288px' : width;
 
   const svgStyle = {
-    displayWidth,
+    width: displayWidth,
   };
 
   return (
