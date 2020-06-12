@@ -3,8 +3,6 @@
 exports[`WordMark Wordmark renders correctly without props 1`] = `
 <svg
   aria-label="UofM Home page"
-  data-name="Layer 1"
-  id="Layer_1"
   style={
     Object {
       "width": "288px",
@@ -21,9 +19,7 @@ exports[`WordMark Wordmark renders correctly without props 1`] = `
       {fill:#fff;stroke:#fff;stroke-miterlimit:10;stroke-width:0.2px;}
     </style>
   </defs>
-  <title>
-    UofM Home page
-  </title>
+  <title />
   <path
     className="cls-1"
     d="M54.6,29.13l-10.21-17H47.2V3.31h-17v8.85H33l-3.9,6.48-3.9-6.48H28V3.31H11v8.85h2.81l-10.21,17H0V38H17.33V29.13H14.22l5.32-8.84,2.06,3.42h-2v8.85h19V23.71h-2l2.07-3.42L44,29.13H40.91V38H58.24V29.13Z"

@@ -1,22 +1,25 @@
-__tests__/*
 .vscode
-coverage/*
-node_modules
-src
-.babelrc
+build/**
+coverage/**
+node_modules/**
+public/**
+src/**
+utils/**
 .eslintignore                                  
-.eslintrc.json 
 .gitignore
 .npmignore
-webpack.config.js
-.github/*
+componentBuild.config.js
+.github/**
 .git
 
+lint-staged.config.js
 
-.prettierrc.json
+
 *.tgz
 .DS_Store
-/dev
-/utils
+
+
 package-lock.json
 
+TODO
+README.md

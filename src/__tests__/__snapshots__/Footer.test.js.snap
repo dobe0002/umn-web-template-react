@@ -1,8 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UMN Footer Footer renders correctly 1`] = `
-<styled.footer
+<footer
   role="contentinfo"
+  style={
+    Object {
+      "borderTop": "1px solid #f0f0f0",
+      "color": "#000",
+      "fontFamily": "Helvetica, \\"Helvetica Neue\\", Futura, Verdana, Geneva, sans-serif",
+      "fontSize": "0.8rem",
+      "padding": "20px 54px",
+      "textAlign": "center",
+    }
+  }
 >
   <MainNavLinks
     mode="footer"
@@ -21,11 +31,17 @@ exports[`UMN Footer Footer renders correctly 1`] = `
     <span>
        
     </span>
-    <styled.a
+    <a
       href="http://privacy.umn.edu"
+      style={
+        Object {
+          "color": "#404d5b",
+          "textDecoration": "underline",
+        }
+      }
     >
       Privacy Statement
-    </styled.a>
+    </a>
   </p>
-</styled.footer>
+</footer>
 `;

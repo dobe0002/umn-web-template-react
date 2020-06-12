@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UMN Header Header renders correctly 1`] = `
+<header>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+.umnHeaderWrapperDiv {
+  position: relative;
+  min-height: 68px;
+  background-color: #7a0019;
+  padding: 0 54px;
+  padding-top: 15px;
+  color: #fff;
+  font-size: 14px;
+  font-family: Helvetica, 'Helvetica Neue', Futura, Verdana, Geneva, sans-serif;
+  box-sizing: border-box;
+}
+
+@media (max-width: 609px) {
+  .umnHeaderWrapperDiv {
+    min-height: 100px;
+  }
+  .umnHeaderSearchForm {
+    display: block;
+    right: auto;
+    top: 64px;
+  }
+}
+@media (max-width: 775px) {
+  .umnHeaderSearchForm {
+    right: 17px;
+  }
+}
+
+.umnHeaderSearchForm {
+  display: block;
+  position: absolute;
+  right: 54px;
+  bottom: 8px;
+}
+
+.umnHeaderSearchInput {
+  font-size: 14px;
+  border: none;
+  padding: 4px;
+  width: 175px;
+}
+.umnHeaderSearchButton {
+  background-color: #7a0019;
+  border: none;
+}
+",
+      }
+    }
+  />
+  <div
+    className="umnHeaderWrapperDiv"
+  >
+    <SkipLinks />
+    <div>
+      <a
+        href="http://umn.edu/"
+      >
+        <WordMark />
+      </a>
+      <MainNavLinks
+        color="#fff"
+      />
+    </div>
+    <form
+      action="https://usearch.umn.edu/"
+      className="umnHeaderSearchForm"
+      id="search-form"
+      name="gs"
+    >
+      <input
+        aria-label="Search for"
+        className="umnHeaderSearchInput"
+        maxLength="256"
+        name="query"
+        placeholder="Search"
+        type="text"
+      />
+      <button
+        aria-label="Submit Search"
+        className="umnHeaderSearchButton"
+        name="submit"
+        type="submit"
+        value="search"
+      >
+        <SearchIcon />
+      </button>
+    </form>
+  </div>
+</header>
+`;

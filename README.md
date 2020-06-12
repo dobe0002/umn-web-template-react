@@ -2,8 +2,7 @@
 
 React versions of the University of Minnesota web template items that can easily be included into a React-based application as npm packages. Currently the following are available:
 
-- UmnHeader - Contains the institutional, maroon header with search bar.
-- AppBanner - Simple orange application banner.
+- UmnHeader - Contains the institutional, maroon header with search bar.  Also contains an optional application banner.
 - UmnFooter - Contains the institutional text footer with copyright statement and privacy policy link.
 
 ---
@@ -19,106 +18,23 @@ Go to: `https://github.com/dobe0002/umn-web-template-react/packages/95784` and d
 In the project that you would like to include the UofM web template components, add the path to the`.tgz` file to your `package.json` file:
 
 ```
-...
 dependencies: {
-  "@dobe0002/umn-web-template-react": "path_to_tgz_file",
+  "@dobe0002/umn-web-template-react": file:/"path_to_tgz_file",
+}
+```
+For example: 
+```
+dependencies: {
+  "@dobe0002/umn-web-template-react": "file:/./packages/dobe0002-umn-web-template-react-1.0.0.tgz"
   ...
 }
-...
 ```
 
 Then run `npm install`.
 
-### Method 2 - Use GitHub as the registry (preferred)
+### Method 2 - Get the package directly from GitHub
 
-In your project, create a `.npmrc` file at the root of your project with the following content:
-
-```
-registry=https://npm.pkg.github.com/dobe0002
-```
-
-If you need to use packages from multiple GitHub organizations, use the following format:
-
-```
-registry=https://npm.pkg.github.com/dobe0002
-@facebook:registry=https://npm.pkg.github.com
-@webpack:registry=https://npm.pkg.github.com
-@babel:registry=https://npm.pkg.github.com
-```
-
-#### Method 2 - Logging into GitHub
-
-You need to login to GitHub in order to use it as a npm registry. There are two ways to login to GitHub: login via the command line before downloading the packages.
-
-Both methods require you to use a personal access token. [How to create a personal access token.](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
-
-Ensure that both `repo` and `read:packages` scopes have been set.
-
-**Note** Do not check in any files that contain the personal access token.
-
-##### Method 2 - Login-in option 1 - Using command line
-
-After the .npmrc file has been created, run the following in a command line: `npm login` and then enter the login information:
-
-```
-  $ npm login --registry=https://npm.pkg.github.com
-  > Username: GITHUB_USERNAME
-  > Password: TOKEN
-  > Email: PUBLIC-EMAIL-ADDRESS
-```
-
-Note: You will need to re-log in with each new terminal window.
-
-##### Method 2 - Login-in option 2 - Using .npmrc file
-
-Instead of logging in via the command line, you can add the following to the top of the .npmrc file:
-
-```
-//npm.pkg.github.com/:_authToken=TOKEN
-```
-
-Replace `TOKEN` with your personal access token.
-
-#### Method 2 - Install package
-
-In the project that you would like to include the UofM web template components, add web components to your `package.json` file:
-
-```
-...
-dependencies: {
-  "@dobe0002/umn-web-template-react": "0.1.2",
-  ...
-}
-...
-```
-
-But replace the version number with the wanted version.
-
-Then run `npm install`.
-
----
-
-### Running npm install in a GitHub Action
-
-When running `npm install` within a GitHub action, a token is automatically created, so a personal access token does not need to be created. Use the following in your GitHub workflow file in the `steps` section:
-
-```
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 12
-        registry-url: https://npm.pkg.github.com/
-        scope: '@dobe0002'
-
-    - run: npm install
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-```
+In your package.json, you can get the package directly from GitHub.  Please see the [READMD-GitHub.md](READMD-GitHub.md) file for more information.
 
 ---
 
@@ -126,7 +42,7 @@ jobs:
 
 ### Requirements
 
-In order to use these web components, you need to ensue that the following are installed into your project (usually by being listed in the package.json file).
+In order to use these web components, you need to ensue that the following are in your package.json file and installed.
 
 - react
 - react-dom
@@ -134,7 +50,7 @@ In order to use these web components, you need to ensue that the following are i
 On the React file that you want to use the web components, include the modules you want to use. For example:
 
 ```
-import { UmnHeader, UmnFooter,  AppBanner } from 'umn-web-template-components-react';
+import { UmnHeader, UmnFooter } from '@dobe0002/umn-web-template-react';
 ```
 
 Then use the modules a normal React modules:
@@ -143,7 +59,6 @@ Then use the modules a normal React modules:
 const App = () => (
   <div>
     <UmnHeader />
-    <AppBanner />
     <div> ... </div>
     <UmnFooter />
   </div>
@@ -165,16 +80,9 @@ The following props can be passed. All are optional unless specified otherwise.
 
 - `mainNavId` - String. Id of the start of the main navigation. Used to create a "skip to navigation" link.
 - `mainContentId` - String. Id of the start of the main content. Used to create a "skip to content" link.
+- `appTitle` - String. Application title.
 
-### AppBanner
 
-Simple orange application banner.
-
-#### Props
-
-The following props can be passed. All are optional unless specified otherwise.
-
-- `appTitle` - String. Application title. Required.
 
 ### UmnFooter
 
@@ -187,31 +95,42 @@ The following props can be passed. All are optional unless specified otherwise.
 - `year` - String. Copyright year. Will default to the year the footer component was last updated.
 
 ---
-
-## Tests
-
-Test can be run by typing:
-
-```
-npm run test
-```
-
-Most of the test are snapshot based tests. If you make a change to the UI, then you will need to update these snapshots. To update the snapshots, type:
-
-```
-npm run test:update
-```
-
-Before checking in the new snapshots into GitHub, be sure they are correct. All snapshots are located in `__tests__/__snapshots__`.
-
+---
 ---
 
-## Preview during development
+## Developing
 
-While working, you can preview the components in a browser. First, set the build to watch for changes by typing:
+This package was created using as few dependencies as possible.  Currently on React and React-Dom are required.  With that said, there are numerous developmental dependencies and tools to help developing the package.
 
-```
-npm run build:dev
-```
+The React files are saved in the `src/HeaderFooter` directory.  Any new components should be listed in the `src/HeaderFooter/index.jsx` file.
 
-Then open the following file in a browser: `/dev/index.html`. **Note:** You will need to refresh the browser page to see changes.
+
+## Tests
+The test files are located in `src/__tests__` directory.  All components in teh `src/HeaderFooter` should have a corresponding test with high test  coverage.
+
+You can run the test suite by typing `npm run test` in a terminal window while at the root of the project.  When you run this command, a coverage report is created and saved in the `coverage` directory.
+
+If you wish to have the tests continually run while you are working, you can start the test in "watch" mode by typing `npm run test:watch` in a terminal window at the root of the project.  Coverage reports will not be collected or updated while in "watch" mode.
+
+### Snapshots
+Unfortunately the test suite heavily relies on snapshot tests.  You can update snapshots after making UI changes by typing `npm run test:update` in a terminal window while at the root of the project.  Newly updated snapshots should be checked into git.
+
+
+## Linting
+Linting is enforced before files can be committed into git (by using Husky).  You can check all files in the project for linting by typing `npm run lint` in a terminal window while at the root of the project. 
+
+You automatically fix some linting issues by running `npm run lint:fix` in a terminal window while at the root of the project.
+
+
+## Security Audit
+You can check for any high or critical known security vulnerabilities in the dependencies by typing `npm run npmAudit`.  All known security vulnerabilities will be displayed, but the previous command will fail only if at least one of the issues are ranked "high" or higher.
+
+
+##  Running development server
+In order to make development easier, there is sample component that contains the modules in this packge (located at `src/App.jsx`).  To view this component in a browser, type `npm run start` in a terminal window while at the root of the project.  This will start the development server at `http://localhost:3000` at and load the page in a browser.  
+
+Any change to a file will cause the application to be re-build an automatically show those changes in the browser.
+
+
+## Creating a package (aka a .tgz file)
+To create a minified .tgz file to be used in another project or be hosted in an nmp registry, run `npm run buildPackage` in a terminal window at the root of the project.  The .tgz file will be saved at the root of the project.

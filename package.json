@@ -1,86 +1,133 @@
 {
   "name": "@dobe0002/umn-web-template-react",
-  "version": "0.1.4",
-  "description": "",
-  "main": "build/bundle.js",
+  "version": "1.0.0",
+  "private": true,
+  "main": "compiled/bundle.js",
   "repository": "https://github.com/dobe0002/umn-web-template-react",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "peerDependencies": {
     "react": "^16.10.1",
-    "react-dom": "^16.10.1",
-    "styled-components": "^4.4.0",
-    "prop-types": "15.7.2"
-  },
-  "scripts": {
-    "build:watch": "webpack --watch",
-    "build": "webpack --mode production",
-    "build:dev": "webpack --watch --config dev/webpack.config.js",
-    "clean": "rm -rf node_modules && rm -f package-lock.json && rm -rf build && npm i && npm run build ",
-    "buildPackage": "npm run clean -- -p && npm pack",
-    "test": "NODE_ENV=test jest",
-    "test:update": "npm run test -- -u",
-    "eslint": "esw --ext .js,.jsx ",
-    "eslint:watch": "esw --ext .js,.jsx --watch ",
-    "npmAudit": "npm audit --registry=https://registry.npmjs.org ",
-    "npmAuditJson": "npm run npmAudit -- --audit-level high && npm run npmAudit -- --json --audit-level high > npmAuditReport.json",
-    "prettier:check": "prettier  --ignore-path ./.eslintignore --check '**/*.+(js|jsx|html|css|scss|json|json5)'",
-    "prettier:watch": "onchange '**/*.+(js|jsx|html|css|scss|json|json5)' -- prettier --write {{changed}}",
-    "prettier:write": "prettier  --ignore-path ./.eslintignore --write '**/*.+(js|jsx|html|css|scss|json|json5)'"
+    "react-dom": "^16.10.1"
   },
   "devDependencies": {
-    "@babel/core": "7.4.5",
-    "@babel/plugin-transform-runtime": "^7.4.4",
-    "@babel/preset-env": "7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/runtime": "7.5.5",
-    "babel-loader": "^8.0.6",
-    "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.9.0",
+    "@babel/preset-react": "^7.10.1",
+    "bootstrap": "^4.5.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.5.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-watch": "^7.0.0",
+    "jest-axe": "3.4.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.7",
+    "prettier": "2.0.5",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
-    "jest": "^24.9.0",
-    "jest-axe": "^3.2.0",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.15.1",
-    "react-test-renderer": "^16.11.0",
-    "enzyme-to-json": "3.4.3",
-    "styled-components": "^4.4.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.1",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-react-hooks": "^2.3.0",
-    "eslint-watch": "^6.0.1",
-    "prettier": "1.19.1"
+    "prop-types": "15.7.2",
+    "react-scripts": "3.4.1",
+    "sass": "^1.3.0",
+    "stylelint": "^13.5.0",
+    "stylelint-config-prettier": "^8.0.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "buildCompiled": "webpack --mode production --config componentBuild.config.js",
+    "test": "react-scripts test --coverage --watchAll=false",
+    "test:watch": "react-scripts test ",
+    "test:update": "npm run test -- -u",
+    "----------------------------------------------------------1": "",
+    "lint": "npm run lint:js && npm run prettier:all && npm run lint:scss:all",
+    "lint:fix": "npm run lint:js:fix && npm run prettier:fix:all && npm run lint:scss:fix:all",
+    "----------------------------------------------------------2": "",
+    "lint:js": "esw --ext .jsx,.js --color ",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "prettier": "prettier  --ignore-path ./.eslintignore --check",
+    "prettier:all": "npm run prettier '**/*.+(js|jsx|html|css|scss|json)'",
+    "prettier:fix": "prettier  --ignore-path ./.eslintignore --write",
+    "prettier:fix:all": "npm run prettier:fix '**/*.+(js|jsx|html|css|scss|json)'",
+    "lint:scss": "stylelint --ignore-path ./.eslintignore ",
+    "lint:scss:all": "npm run lint:scss './**/*.+(css|scss)'",
+    "lint:scss:fix:all": "npm run lint:scss -- --fix './**/*.+(css|scss)'",
+    "----------------------------------------------------------3": "",
+    "buildPackage": "npm run buildCompiled && npm pack",
+    "checkCoverage": "node ./utils/testCoverage.js",
+    "npmAudit": "npm audit --audit-level=high"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "printWidth": 80
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb",
+      "airbnb/hooks",
+      "prettier"
+    ],
+    "globals": {
+      "styles": true
+    },
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "jest": true,
+      "es6": true,
+      "jquery": true
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+      "prettier",
+      "eslint-plugin-react"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "no-var": "error",
+      "curly": "error",
+      "one-var": "error",
+      "no-console": "error"
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-prettier"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "jest": {
-    "collectCoverage": true,
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/index.jsx",
+      "!<rootDir>/src/setupTests.js",
+      "!<rootDir>/src/App.jsx"
     ],
     "coverageReporters": [
       "html",
-      "json-summary",
-      "text-summary"
+      "json-summary"
     ],
-    "collectCoverageFrom": [
-      "**/*.{js,jsx}",
-      "!**/node_modules/**",
-      "!**/coverage/**",
-      "!**/webpack.config.js",
-      "!**/build/**",
-      "!**/dev/**",
-      "!**/utils/**"
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   },
-  "dependencies": {}
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

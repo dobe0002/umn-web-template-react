@@ -1,19 +1,23 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
-const WordMark = props => {
+const WordMark = (props) => {
   const { width, title } = props;
+  const displayTitle =
+    title === undefined || title === '' ? 'UofM Home page' : title;
+  const displayWidth = width === undefined || width === '' ? '288px' : width;
+
   const svgStyle = {
-    width
+    width: displayWidth,
   };
+
   return (
     <svg
-      id='Layer_1'
-      data-name='Layer 1'
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 285.64 37.97'
       style={svgStyle}
-      aria-label={title}
+      aria-label={displayTitle}
     >
       <defs>
         <style>
@@ -186,11 +190,11 @@ const WordMark = props => {
 
 export default WordMark;
 
-WordMark.propTypes = {
-  title: PropTypes.string,
-  width: PropTypes.string
-};
-WordMark.defaultProps = {
-  title: 'UofM Home page',
-  width: '288px'
-};
+// WordMark.propTypes = {
+//   title: PropTypes.string,
+//   width: PropTypes.string,
+// };
+// WordMark.defaultProps = {
+//   title: 'UofM Home page',
+//   width: '288px',
+// };

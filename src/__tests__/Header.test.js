@@ -2,24 +2,25 @@
 import React from 'react';
 import { configure, shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import AppBanner from '../src/AppBanner';
+import Header from '../HeaderFooter/Header';
 
 const { axe, toHaveNoViolations } = require('jest-axe');
 
 expect.extend(toHaveNoViolations);
+
 configure({ adapter: new Adapter() });
 
-describe('Application Banner', () => {
+describe('UMN Header', () => {
   it('Accessibility check', async () => {
-    const appBanner = mount(<AppBanner appTitle='My super duper app' />);
-    const results = await axe(appBanner.getDOMNode());
+    const header = mount(<Header />);
+    const results = await axe(header.getDOMNode());
 
     // console.log('Axe violations', results.violations);
-
     expect(results).toHaveNoViolations();
   });
-  it('AppBanner renders correctly', () => {
-    const appBanner = shallow(<AppBanner appTitle='My super duper app' />);
-    expect(appBanner).toMatchSnapshot();
+  it('Header renders correctly', () => {
+    const header = shallow(<Header />);
+    // console.log(header.html());
+    expect(header).toMatchSnapshot();
   });
 });

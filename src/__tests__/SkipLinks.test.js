@@ -2,7 +2,7 @@
 import React from 'react';
 import { configure, shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import SkipLinks from '../src/HeaderFooter/SkipLinks';
+import SkipLinks from '../HeaderFooter/SkipLinks';
 
 const { axe, toHaveNoViolations } = require('jest-axe');
 
@@ -12,7 +12,7 @@ configure({ adapter: new Adapter() });
 describe('Skip Links', () => {
   it('Accessibility check', async () => {
     const temp = (
-      <div>
+      <header>
         <SkipLinks mainNavId='foo' mainContentId='bar' />
         <a id='foo' href='item1'>
           item1
@@ -20,7 +20,7 @@ describe('Skip Links', () => {
         <a id='bar' href='item2'>
           item2
         </a>
-      </div>
+      </header>
     );
     const skipLinks = mount(temp);
     const results = await axe(skipLinks.getDOMNode());

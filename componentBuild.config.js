@@ -4,35 +4,44 @@ const pkg = require('./package.json');
 
 const libraryName = pkg.name;
 module.exports = {
-  entry: path.join(__dirname, './src/index.jsx'),
+  entry: path.join(__dirname, './src/HeaderFooter/index.jsx'),
   output: {
-    path: path.join(__dirname, './build'),
+    path: path.join(__dirname, './compiled'),
     filename: 'bundle.js',
     library: libraryName,
     libraryTarget: 'umd',
-    publicPath: '/build/',
-    umdNamedDefine: true
+
+    umdNamedDefine: true,
   },
+
   node: {
     net: 'empty',
     tls: 'empty',
-    dns: 'empty'
+    dns: 'empty',
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        use: ['babel-loader'],
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
         include: path.resolve(__dirname, 'src'),
-        exclude: /node_modules/
-      }
-    ]
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-react'],
+            },
+          },
+        ],
+      },
+    ],
   },
   resolve: {
     alias: {
       react: path.resolve(__dirname, './node_modules/react'),
-      'react-dom': path.resolve(__dirname, './node_modules/react-dom')
-    }
+      'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+    },
+    extensions: ['.jsx', '.js', '.json'],
   },
   externals: {
     // Don't bundle react or react-dom
@@ -40,18 +49,13 @@ module.exports = {
       commonjs: 'react',
       commonjs2: 'react',
       amd: 'React',
-      root: 'React'
+      root: 'React',
     },
     'react-dom': {
       commonjs: 'react-dom',
       commonjs2: 'react-dom',
       amd: 'ReactDOM',
-      root: 'ReactDOM'
+      root: 'ReactDOM',
     },
-    'styled-components': {
-      commonjs: 'styled-components',
-      commonjs2: 'styled-components',
-      amd: 'styled-components'
-    }
-  }
+  },
 };

@@ -2,7 +2,7 @@
 import React from 'react';
 import { configure, shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import Footer from '../src/Footer';
+import Footer from '../HeaderFooter/Footer';
 
 const { axe, toHaveNoViolations } = require('jest-axe');
 
@@ -24,10 +24,7 @@ describe('UMN Footer', () => {
   });
   it('A default year displayed when year attribute is not passed', () => {
     const footer = shallow(<Footer />);
-    const year = footer
-      .find('.year')
-      .text()
-      .trim();
+    const year = footer.find('.year').text().trim();
     expect(year).not.toEqual('');
   });
 });

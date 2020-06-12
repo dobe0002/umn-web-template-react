@@ -1,9 +1,17 @@
-node_modules
-package
-*.tgz
-build
-.vscode
-.DS_Store
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
 /coverage
-/dev/build
+
+# production
 /build
+/compiled
+
+# misc
+.DS_Store
+npm-debug.log*
+.vscode/
+*.tgz
