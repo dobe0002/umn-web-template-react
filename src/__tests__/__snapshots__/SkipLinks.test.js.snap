@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skip Links Both skip links are displayed when passed 1`] = `ShallowWrapper {}`;
+
+exports[`Skip Links Only main content skip links is it is only prop passed 1`] = `ShallowWrapper {}`;
+
+exports[`Skip Links Only main nav skip links is it is only prop passed 1`] = `ShallowWrapper {}`;
