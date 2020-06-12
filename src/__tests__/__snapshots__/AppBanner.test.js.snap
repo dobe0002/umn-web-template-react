@@ -1,3 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Application Banner AppBanner renders correctly 1`] = `ShallowWrapper {}`;
+exports[`Application Banner AppBanner renders correctly 1`] = `
+<div
+  role="contentinfo"
+  style={
+    Object {
+      "background": "linear-gradient( to bottom, #f0e9d1 0%,#ffde7c 100%)",
+      "borderBottom": " #f93 2px solid",
+      "color": "#5b0013",
+      "fontFamily": "\\"Trebuchet MS\\", Arial, Helvetica, sans-serif",
+      "fontSize": "35px",
+      "fontWeight": "bold",
+      "marginBottom": 0,
+      "marginTop": 0,
+      "minHeight": "52px",
+      "paddingLeft": "10px",
+      "paddingTop": "8px",
+    }
+  }
+>
+  My super duper app
+</div>
+`;

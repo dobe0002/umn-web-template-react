@@ -1,3 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UMN Footer Footer renders correctly 1`] = `ShallowWrapper {}`;
+exports[`UMN Footer Footer renders correctly 1`] = `
+<footer
+  role="contentinfo"
+  style={
+    Object {
+      "borderTop": "1px solid #f0f0f0",
+      "color": "#000",
+      "fontFamily": "Helvetica, \\"Helvetica Neue\\", Futura, Verdana, Geneva, sans-serif",
+      "fontSize": "0.8rem",
+      "padding": "20px 54px",
+      "textAlign": "center",
+    }
+  }
+>
+  <MainNavLinks
+    mode="footer"
+  />
+  <p>
+    ©
+    <span
+      className="year"
+    >
+      1234
+    </span>
+    <span>
+       
+    </span>
+    Regents of the University of Minnesota. All rights reserved. The University of Minnesota is an equal opportunity educator and employer.
+    <span>
+       
+    </span>
+    <a
+      href="http://privacy.umn.edu"
+      style={
+        Object {
+          "color": "#404d5b",
+          "textDecoration": "underline",
+        }
+      }
+    >
+      Privacy Statement
+    </a>
+  </p>
+</footer>
+`;
