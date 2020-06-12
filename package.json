@@ -43,6 +43,7 @@
     "buildCompiled": "webpack --mode production --config componentBuild.config.js",
     "test": "react-scripts test --coverage --watchAll=false",
     "test:watch": "react-scripts test ",
+    "test:update": "npm run test -- -u",
     "----------------------------------------------------------1": "",
     "lint": "npm run lint:js && npm run prettier:all && npm run lint:scss:all",
     "lint:fix": "npm run lint:js:fix && npm run prettier:fix:all && npm run lint:scss:fix:all",
@@ -57,7 +58,9 @@
     "lint:scss:all": "npm run lint:scss './**/*.+(css|scss)'",
     "lint:scss:fix:all": "npm run lint:scss -- --fix './**/*.+(css|scss)'",
     "----------------------------------------------------------3": "",
-    "buildPackage": "npm run build && npm pack"
+    "buildPackage": "npm run build && npm pack",
+    "checkCoverage": "node ./utils/testCoverage.js",
+    "npmAudit": "npm audit --audit-level=high" 
   },
   "prettier": {
     "singleQuote": true,
@@ -112,7 +115,8 @@
     "coverageReporters": [
       "html",
       "json-summary"
-    ]
+    ],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "browserslist": {
     "production": [

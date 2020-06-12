@@ -10,16 +10,16 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 10
+          node-version: 12
       - name: Install and build
         run: |
           npm ci
-          npm run build
+          npm run buildCompiled
       - name: Tests
         run: npm run test
       - name: Test coverage
-        run: node utils/testCoverage.js
+        run: npm run checkCoverage
       - name: Linting
-        run: npm run eslint
+        run: npm run lint
       - name: Security audit
-        run: npm run npmAuditJson
+        run: npm run npmAudit

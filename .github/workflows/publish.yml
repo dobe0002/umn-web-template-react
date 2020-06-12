@@ -13,15 +13,15 @@ jobs:
       - name: Install and build
         run: |
           npm install
-          npm run build
+          npm run buildCompiled
       - name: Tests
         run: npm run test
       - name: Test coverage
-        run: node utils/testCoverage.js
+        run: npm run checkCoverage
       - name: Linting
-        run: npm run eslint
+        run: npm run lint
       - name: Security audit
-        run: npm run npmAuditJson
+        run: npm run npmAudit
   publish:
     runs-on: ubuntu-latest
     needs: build
@@ -35,7 +35,7 @@ jobs:
       - name: Install and build
         run: |
           npm install
-          npm run build
+          npm run buildCompiled
       - name: Reduce package.json file
         run: node utils/resetPackageJson.js
       - name: Publish
