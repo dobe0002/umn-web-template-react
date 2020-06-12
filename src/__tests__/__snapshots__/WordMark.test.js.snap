@@ -5,7 +5,7 @@ exports[`WordMark Wordmark renders correctly without props 1`] = `
   aria-label="UofM Home page"
   style={
     Object {
-      "displayWidth": "288px",
+      "width": "288px",
     }
   }
   viewBox="0 0 285.64 37.97"

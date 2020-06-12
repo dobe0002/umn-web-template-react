@@ -4,6 +4,44 @@ exports[`Skip Links Both skip links are displayed when passed 1`] = `
 <div
   className="headerLinks umnHeaderSkipLinksWrapperDiv"
 >
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+  .umnHeaderSkipLinksWrapperDiv {
+    position: absolute;
+    top: 0;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    padding: 15px;
+    background: #fff;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .umnHeaderSkipLinksWrapperDiv:focus-within {
+    left: 0;
+    width: auto;
+    height: auto;
+    overflow: auto;
+  }
+  
+  .umnHeaderSkipLinksUl {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .umnHeaderSkipLinksLi {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  ",
+      }
+    }
+  />
   <ul
     className="umnHeaderSkipLinksUl"
   >
@@ -33,6 +71,44 @@ exports[`Skip Links Only main content skip links is it is only prop passed 1`] =
 <div
   className="headerLinks umnHeaderSkipLinksWrapperDiv"
 >
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+  .umnHeaderSkipLinksWrapperDiv {
+    position: absolute;
+    top: 0;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    padding: 15px;
+    background: #fff;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .umnHeaderSkipLinksWrapperDiv:focus-within {
+    left: 0;
+    width: auto;
+    height: auto;
+    overflow: auto;
+  }
+  
+  .umnHeaderSkipLinksUl {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .umnHeaderSkipLinksLi {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  ",
+      }
+    }
+  />
   <ul
     className="umnHeaderSkipLinksUl"
   >
@@ -53,6 +129,44 @@ exports[`Skip Links Only main nav skip links is it is only prop passed 1`] = `
 <div
   className="headerLinks umnHeaderSkipLinksWrapperDiv"
 >
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+  .umnHeaderSkipLinksWrapperDiv {
+    position: absolute;
+    top: 0;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    padding: 15px;
+    background: #fff;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .umnHeaderSkipLinksWrapperDiv:focus-within {
+    left: 0;
+    width: auto;
+    height: auto;
+    overflow: auto;
+  }
+  
+  .umnHeaderSkipLinksUl {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .umnHeaderSkipLinksLi {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  ",
+      }
+    }
+  />
   <ul
     className="umnHeaderSkipLinksUl"
   >

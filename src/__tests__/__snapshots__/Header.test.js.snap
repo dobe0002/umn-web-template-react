@@ -2,6 +2,59 @@
 
 exports[`UMN Header Header renders correctly 1`] = `
 <header>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+.umnHeaderWrapperDiv {
+  position: relative;
+  min-height: 68px;
+  background-color: #7a0019;
+  padding: 0 54px;
+  padding-top: 15px;
+  color: #fff;
+  font-size: 14px;
+  font-family: Helvetica, 'Helvetica Neue', Futura, Verdana, Geneva, sans-serif;
+  box-sizing: border-box;
+}
+
+@media (max-width: 609px) {
+  .umnHeaderWrapperDiv {
+    min-height: 100px;
+  }
+  .umnHeaderSearchForm {
+    display: block;
+    right: auto;
+    top: 64px;
+  }
+}
+@media (max-width: 775px) {
+  .umnHeaderSearchForm {
+    right: 17px;
+  }
+}
+
+.umnHeaderSearchForm {
+  display: block;
+  position: absolute;
+  right: 54px;
+  bottom: 8px;
+}
+
+.umnHeaderSearchInput {
+  font-size: 14px;
+  border: none;
+  padding: 4px;
+  width: 175px;
+}
+.umnHeaderSearchButton {
+  background-color: #7a0019;
+  border: none;
+}
+",
+      }
+    }
+  />
   <div
     className="umnHeaderWrapperDiv"
   >

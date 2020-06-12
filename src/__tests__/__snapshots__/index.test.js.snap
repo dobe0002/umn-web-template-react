@@ -5,6 +5,59 @@ exports[`Index - entry point All items renders correctly 1`] = `
   <UmnHeader>
     <Header>
       <header>
+        <style
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "
+.umnHeaderWrapperDiv {
+  position: relative;
+  min-height: 68px;
+  background-color: #7a0019;
+  padding: 0 54px;
+  padding-top: 15px;
+  color: #fff;
+  font-size: 14px;
+  font-family: Helvetica, 'Helvetica Neue', Futura, Verdana, Geneva, sans-serif;
+  box-sizing: border-box;
+}
+
+@media (max-width: 609px) {
+  .umnHeaderWrapperDiv {
+    min-height: 100px;
+  }
+  .umnHeaderSearchForm {
+    display: block;
+    right: auto;
+    top: 64px;
+  }
+}
+@media (max-width: 775px) {
+  .umnHeaderSearchForm {
+    right: 17px;
+  }
+}
+
+.umnHeaderSearchForm {
+  display: block;
+  position: absolute;
+  right: 54px;
+  bottom: 8px;
+}
+
+.umnHeaderSearchInput {
+  font-size: 14px;
+  border: none;
+  padding: 4px;
+  width: 175px;
+}
+.umnHeaderSearchButton {
+  background-color: #7a0019;
+  border: none;
+}
+",
+            }
+          }
+        />
         <div
           className="umnHeaderWrapperDiv"
         >
@@ -18,7 +71,7 @@ exports[`Index - entry point All items renders correctly 1`] = `
                   aria-label="UofM Home page"
                   style={
                     Object {
-                      "displayWidth": "288px",
+                      "width": "288px",
                     }
                   }
                   viewBox="0 0 285.64 37.97"
@@ -195,59 +248,124 @@ exports[`Index - entry point All items renders correctly 1`] = `
             <MainNavLinks
               color="#fff"
             >
-              <ul
-                className="umnHeaderMainNavLinksUl-header"
-              >
-                <li
-                  className="umnHeaderMainNavLinksLi"
+              <div>
+                <style
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "
+      .umnHeaderMainNavLinksUl,
+.umnHeaderMainNavLinksUl-header {
+  margin: 0;
+  list-style-type: none;
+  display: none;
+}
+
+.umnHeaderMainNavLinksUl-header {
+  position: absolute;
+  right: 54px;
+  top: 8px;
+}
+
+@media (max-width: 775px) {
+  .umnHeaderMainNavLinksUl-header {
+    display: none;
+  }
+  .umnHeaderMainNavLinksUl {
+    display: block;
+  }
+}
+@media (min-width: 776px) {
+  .umnHeaderMainNavLinksUl-header {
+    display: block;
+  }
+  .umnHeaderMainNavLinksUl {
+    display: none;
+  }
+}
+
+.umnHeaderMainNavLinksLi {
+  margin: 0;
+  display: inline-block;
+  margin-left: 1.25rem;
+}
+
+.umnHeaderMainNavLinksA,
+.umnHeaderMainNavLinksA-header {
+  text-decoration: none;
+  color: #404d5b;
+}
+.umnHeaderMainNavLinksA-header {
+  color: #fff;
+}
+.umnHeaderMainNavLinksA:hover,
+.umnHeaderMainNavLinksA:focus {
+  text-decoration: underline;
+  color: #404d5b;
+}
+.umnHeaderMainNavLinksA-header:hover,
+.umnHeaderMainNavLinksA-header:focus {
+  text-decoration: underline;
+  color: #fff;
+}
+
+      ",
+                    }
+                  }
+                />
+                <ul
+                  className="umnHeaderMainNavLinksUl-header"
                 >
-                  <a
-                    className="umnHeaderMainNavLinksA-header"
-                    href="http://onestop.umn.edu/"
+                  <li
+                    className="umnHeaderMainNavLinksLi"
                   >
-                    One Stop
-                  </a>
-                </li>
-                <li
-                  className="umnHeaderMainNavLinksLi"
-                >
-                  <a
-                    className="umnHeaderMainNavLinksA-header"
-                    href="https://www.myu.umn.edu/"
-                  >
-                    <span>
-                      MyU 
-                    </span>
-                    <LockIcon
-                      color="#fff"
+                    <a
+                      className="umnHeaderMainNavLinksA-header"
+                      href="http://onestop.umn.edu/"
                     >
-                      <svg
-                        height="12px"
-                        version="1.1"
-                        viewBox="0 0 9 12"
-                        width="9px"
-                        xmlns="http://www.w3.org/2000/svg"
+                      One Stop
+                    </a>
+                  </li>
+                  <li
+                    className="umnHeaderMainNavLinksLi"
+                  >
+                    <a
+                      className="umnHeaderMainNavLinksA-header"
+                      href="https://www.myu.umn.edu/"
+                    >
+                      <span>
+                        MyU 
+                      </span>
+                      <LockIcon
+                        color="#fff"
                       >
-                        <g
-                          fill="none"
-                          fillRule="evenodd"
-                          stroke="none"
-                          strokeWidth="1"
+                        <svg
+                          height="12px"
+                          version="1.1"
+                          viewBox="0 0 9 12"
+                          width="9px"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
                           <g
-                            fill="#fff"
-                            fillRule="nonzero"
+                            fill="none"
+                            fillRule="evenodd"
+                            stroke="none"
+                            strokeWidth="1"
                           >
-                            <path
-                              d="M0,5.4 L0,12 L9,12 L9,5.4 M0.642857143,5.4 L0.642857143,3.6 C0.642857143,1.62 2.37857143,0 4.5,0 C6.62142857,0 8.35714286,1.62 8.35714286,3.6 L8.35714286,5.4 L7.07142857,5.4 L7.07142857,3.6 C7.07142857,2.28 5.91428571,1.2 4.5,1.2 C3.08571429,1.2 1.92857143,2.28 1.92857143,3.6 L1.92857143,5.4"
-                            />
+                            <g
+                              fill="#fff"
+                              fillRule="nonzero"
+                            >
+                              <path
+                                d="M0,5.4 L0,12 L9,12 L9,5.4 M0.642857143,5.4 L0.642857143,3.6 C0.642857143,1.62 2.37857143,0 4.5,0 C6.62142857,0 8.35714286,1.62 8.35714286,3.6 L8.35714286,5.4 L7.07142857,5.4 L7.07142857,3.6 C7.07142857,2.28 5.91428571,1.2 4.5,1.2 C3.08571429,1.2 1.92857143,2.28 1.92857143,3.6 L1.92857143,5.4"
+                              />
+                            </g>
                           </g>
-                        </g>
-                      </svg>
-                    </LockIcon>
-                  </a>
-                </li>
-              </ul>
+                        </svg>
+                      </LockIcon>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </MainNavLinks>
           </div>
           <form
@@ -315,59 +433,124 @@ exports[`Index - entry point All items renders correctly 1`] = `
         <MainNavLinks
           mode="footer"
         >
-          <ul
-            className="umnHeaderMainNavLinksUl"
-          >
-            <li
-              className="umnHeaderMainNavLinksLi"
+          <div>
+            <style
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "
+      .umnHeaderMainNavLinksUl,
+.umnHeaderMainNavLinksUl-header {
+  margin: 0;
+  list-style-type: none;
+  display: none;
+}
+
+.umnHeaderMainNavLinksUl-header {
+  position: absolute;
+  right: 54px;
+  top: 8px;
+}
+
+@media (max-width: 775px) {
+  .umnHeaderMainNavLinksUl-header {
+    display: none;
+  }
+  .umnHeaderMainNavLinksUl {
+    display: block;
+  }
+}
+@media (min-width: 776px) {
+  .umnHeaderMainNavLinksUl-header {
+    display: block;
+  }
+  .umnHeaderMainNavLinksUl {
+    display: none;
+  }
+}
+
+.umnHeaderMainNavLinksLi {
+  margin: 0;
+  display: inline-block;
+  margin-left: 1.25rem;
+}
+
+.umnHeaderMainNavLinksA,
+.umnHeaderMainNavLinksA-header {
+  text-decoration: none;
+  color: #404d5b;
+}
+.umnHeaderMainNavLinksA-header {
+  color: #fff;
+}
+.umnHeaderMainNavLinksA:hover,
+.umnHeaderMainNavLinksA:focus {
+  text-decoration: underline;
+  color: #404d5b;
+}
+.umnHeaderMainNavLinksA-header:hover,
+.umnHeaderMainNavLinksA-header:focus {
+  text-decoration: underline;
+  color: #fff;
+}
+
+      ",
+                }
+              }
+            />
+            <ul
+              className="umnHeaderMainNavLinksUl"
             >
-              <a
-                className="umnHeaderMainNavLinksA"
-                href="http://onestop.umn.edu/"
+              <li
+                className="umnHeaderMainNavLinksLi"
               >
-                One Stop
-              </a>
-            </li>
-            <li
-              className="umnHeaderMainNavLinksLi"
-            >
-              <a
-                className="umnHeaderMainNavLinksA"
-                href="https://www.myu.umn.edu/"
-              >
-                <span>
-                  MyU 
-                </span>
-                <LockIcon
-                  color="#404d5b"
+                <a
+                  className="umnHeaderMainNavLinksA"
+                  href="http://onestop.umn.edu/"
                 >
-                  <svg
-                    height="12px"
-                    version="1.1"
-                    viewBox="0 0 9 12"
-                    width="9px"
-                    xmlns="http://www.w3.org/2000/svg"
+                  One Stop
+                </a>
+              </li>
+              <li
+                className="umnHeaderMainNavLinksLi"
+              >
+                <a
+                  className="umnHeaderMainNavLinksA"
+                  href="https://www.myu.umn.edu/"
+                >
+                  <span>
+                    MyU 
+                  </span>
+                  <LockIcon
+                    color="#404d5b"
                   >
-                    <g
-                      fill="none"
-                      fillRule="evenodd"
-                      stroke="none"
-                      strokeWidth="1"
+                    <svg
+                      height="12px"
+                      version="1.1"
+                      viewBox="0 0 9 12"
+                      width="9px"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <g
-                        fill="#404d5b"
-                        fillRule="nonzero"
+                        fill="none"
+                        fillRule="evenodd"
+                        stroke="none"
+                        strokeWidth="1"
                       >
-                        <path
-                          d="M0,5.4 L0,12 L9,12 L9,5.4 M0.642857143,5.4 L0.642857143,3.6 C0.642857143,1.62 2.37857143,0 4.5,0 C6.62142857,0 8.35714286,1.62 8.35714286,3.6 L8.35714286,5.4 L7.07142857,5.4 L7.07142857,3.6 C7.07142857,2.28 5.91428571,1.2 4.5,1.2 C3.08571429,1.2 1.92857143,2.28 1.92857143,3.6 L1.92857143,5.4"
-                        />
+                        <g
+                          fill="#404d5b"
+                          fillRule="nonzero"
+                        >
+                          <path
+                            d="M0,5.4 L0,12 L9,12 L9,5.4 M0.642857143,5.4 L0.642857143,3.6 C0.642857143,1.62 2.37857143,0 4.5,0 C6.62142857,0 8.35714286,1.62 8.35714286,3.6 L8.35714286,5.4 L7.07142857,5.4 L7.07142857,3.6 C7.07142857,2.28 5.91428571,1.2 4.5,1.2 C3.08571429,1.2 1.92857143,2.28 1.92857143,3.6 L1.92857143,5.4"
+                          />
+                        </g>
                       </g>
-                    </g>
-                  </svg>
-                </LockIcon>
-              </a>
-            </li>
-          </ul>
+                    </svg>
+                  </LockIcon>
+                </a>
+              </li>
+            </ul>
+          </div>
         </MainNavLinks>
         <p>
           ©
