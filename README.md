@@ -2,7 +2,7 @@
 
 React versions of the University of Minnesota web template items that can easily be included into a React-based application as npm packages. Currently the following are available:
 
-- UmnHeader - Contains the institutional, maroon header with search bar.  Also contains an optional application banner.
+- UmnHeader - Contains the institutional, maroon header with search bar. Also contains an optional application banner.
 - UmnFooter - Contains the institutional text footer with copyright statement and privacy policy link.
 
 ---
@@ -22,7 +22,9 @@ dependencies: {
   "@dobe0002/umn-web-template-react": file:/"path_to_tgz_file",
 }
 ```
-For example: 
+
+For example:
+
 ```
 dependencies: {
   "@dobe0002/umn-web-template-react": "file:/./packages/dobe0002-umn-web-template-react-1.0.0.tgz"
@@ -34,7 +36,7 @@ Then run `npm install`.
 
 ### Method 2 - Get the package directly from GitHub
 
-In your package.json, you can get the package directly from GitHub.  Please see the [READMD-GitHub.md](READMD-GitHub.md) file for more information.
+In your package.json, you can get the package directly from GitHub. Please see the [READMD-GitHub.md](READMD-GitHub.md) file for more information.
 
 ---
 
@@ -42,7 +44,7 @@ In your package.json, you can get the package directly from GitHub.  Please see 
 
 ### Requirements
 
-In order to use these web components, you need to ensue that the following are in your package.json file and installed.
+In order to use these web components, you need to ensure that the following are in your package.json file and installed.
 
 - react
 - react-dom
@@ -82,8 +84,6 @@ The following props can be passed. All are optional unless specified otherwise.
 - `mainContentId` - String. Id of the start of the main content. Used to create a "skip to content" link.
 - `appTitle` - String. Application title.
 
-
-
 ### UmnFooter
 
 The institutional footer with the copyright year and privacy statement link.
@@ -93,44 +93,48 @@ The institutional footer with the copyright year and privacy statement link.
 The following props can be passed. All are optional unless specified otherwise.
 
 - `year` - String. Copyright year. Will default to the year the footer component was last updated.
+- `label` - String. ARIA label to describe to screen readers the content of the footer. Will default to "University copyright information"
 
 ---
+
 ---
+
 ---
 
 ## Developing
 
-This package was created using as few dependencies as possible.  Currently on React and React-Dom are required.  With that said, there are numerous developmental dependencies and tools to help developing the package.
+This package was created using as few dependencies as possible. Currently on React and React-Dom are required. With that said, there are numerous developmental dependencies and tools to help developing the package.
 
-The React files are saved in the `src/HeaderFooter` directory.  Any new components should be listed in the `src/HeaderFooter/index.jsx` file.
-
+The React files are saved in the `src/HeaderFooter` directory. Any new components should be listed in the `src/HeaderFooter/index.jsx` file.
 
 ## Tests
-The test files are located in `src/__tests__` directory.  All components in teh `src/HeaderFooter` should have a corresponding test with high test  coverage.
 
-You can run the test suite by typing `npm run test` in a terminal window while at the root of the project.  When you run this command, a coverage report is created and saved in the `coverage` directory.
+The test files are located in `src/__tests__` directory. All components in the `src/HeaderFooter` should have a corresponding test with high test coverage.
 
-If you wish to have the tests continually run while you are working, you can start the test in "watch" mode by typing `npm run test:watch` in a terminal window at the root of the project.  Coverage reports will not be collected or updated while in "watch" mode.
+You can run the test suite by typing `npm run test` in a terminal window while at the root of the project. When you run this command, a coverage report is created and saved in the `coverage` directory.
+
+If you wish to have the tests continually run while you are working, you can start the test in "watch" mode by typing `npm run test:watch` in a terminal window at the root of the project. Coverage reports will not be collected or updated while in "watch" mode.
 
 ### Snapshots
-Unfortunately the test suite heavily relies on snapshot tests.  You can update snapshots after making UI changes by typing `npm run test:update` in a terminal window while at the root of the project.  Newly updated snapshots should be checked into git.
 
+Unfortunately the test suite heavily relies on snapshot tests. You can update snapshots after making UI changes by typing `npm run test:update` in a terminal window while at the root of the project. Newly updated snapshots should be checked into git.
 
 ## Linting
-Linting is enforced before files can be committed into git (by using Husky).  You can check all files in the project for linting by typing `npm run lint` in a terminal window while at the root of the project. 
+
+Linting is enforced before files can be committed into git (by using Husky). You can check all files in the project for linting by typing `npm run lint` in a terminal window while at the root of the project.
 
 You automatically fix some linting issues by running `npm run lint:fix` in a terminal window while at the root of the project.
 
-
 ## Security Audit
-You can check for any high or critical known security vulnerabilities in the dependencies by typing `npm run npmAudit`.  All known security vulnerabilities will be displayed, but the previous command will fail only if at least one of the issues are ranked "high" or higher.
 
+You can check for any high or critical known security vulnerabilities in the dependencies by typing `npm run npmAudit`. All known security vulnerabilities will be displayed, but the previous command will fail only if at least one of the issues are ranked "high" or higher.
 
-##  Running development server
-In order to make development easier, there is sample component that contains the modules in this packge (located at `src/App.jsx`).  To view this component in a browser, type `npm run start` in a terminal window while at the root of the project.  This will start the development server at `http://localhost:3000` at and load the page in a browser.  
+## Running development server
+
+In order to make development easier, there is sample component that contains the modules in this packge (located at `src/App.jsx`). To view this component in a browser, type `npm run start` in a terminal window while at the root of the project. This will start the development server at `http://localhost:3000` at and load the page in a browser.
 
 Any change to a file will cause the application to be re-build an automatically show those changes in the browser.
 
-
 ## Creating a package (aka a .tgz file)
-To create a minified .tgz file to be used in another project or be hosted in an nmp registry, run `npm run buildPackage` in a terminal window at the root of the project.  The .tgz file will be saved at the root of the project.
+
+To create a minified .tgz file to be used in another project or be hosted in an nmp registry, run `npm run buildPackage` in a terminal window at the root of the project. The .tgz file will be saved at the root of the project.

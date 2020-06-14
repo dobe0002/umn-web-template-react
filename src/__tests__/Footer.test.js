@@ -19,12 +19,17 @@ describe('UMN Footer', () => {
     expect(results).toHaveNoViolations();
   });
   it('Footer renders correctly', () => {
-    const footer = shallow(<Footer year='1234' />);
+    const footer = shallow(<Footer year='1234' label='UMN Copyright' />);
     expect(footer).toMatchSnapshot();
   });
   it('A default year displayed when year attribute is not passed', () => {
     const footer = shallow(<Footer />);
     const year = footer.find('.year').text().trim();
     expect(year).not.toEqual('');
+  });
+  it('A default aria-label is used when not passed', () => {
+    const footer = shallow(<Footer />);
+    const ariaLabel = footer.find('footer').props()['aria-label'];
+    expect(ariaLabel).not.toEqual('');
   });
 });

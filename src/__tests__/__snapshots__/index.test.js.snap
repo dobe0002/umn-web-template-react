@@ -418,6 +418,7 @@ exports[`Index - entry point All items renders correctly 1`] = `
   <UmnFooter>
     <Footer>
       <footer
+        aria-label="University copyright information"
         role="contentinfo"
         style={
           Object {
