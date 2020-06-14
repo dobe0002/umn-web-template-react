@@ -107,7 +107,8 @@
     ],
     "coverageReporters": [
       "html",
-      "json-summary"
+      "json-summary",
+      "text-summary"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
