@@ -21,10 +21,14 @@ const linkCSS = {
 };
 
 const Footer = (props) => {
-  const { year } = props;
+  const { year, label } = props;
   const displayYear = year === '' || year === undefined ? defaultYear : year;
+  const displayLabel =
+    label === '' || label === undefined
+      ? 'University copyright information'
+      : label;
   return (
-    <footer role='contentinfo' style={footerCSS}>
+    <footer role='contentinfo' style={footerCSS} aria-label={displayLabel}>
       <MainNavLinks mode='footer' />
       <p>
         &copy;
@@ -42,9 +46,11 @@ const Footer = (props) => {
 };
 // Footer.propTypes = {
 //   year: PropTypes.string,
+//   label: PropTypes.string
 // };
 // Footer.defaultProps = {
 //   year: '2020',
+//   label: 'University copyright information'
 // };
 
 export default Footer;
