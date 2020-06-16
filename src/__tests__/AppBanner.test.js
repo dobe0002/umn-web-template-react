@@ -11,7 +11,11 @@ configure({ adapter: new Adapter() });
 
 describe('Application Banner', () => {
   it('Accessibility check', async () => {
-    const appBanner = mount(<AppBanner appTitle='My super duper app' />);
+    const appBanner = mount(
+      <header>
+        <AppBanner appTitle='My super duper app' />
+      </header>
+    );
     const results = await axe(appBanner.getDOMNode());
 
     // console.log('Axe violations', results.violations);

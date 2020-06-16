@@ -94,5 +94,8 @@ exports[`UMN Header Header renders correctly 1`] = `
       </button>
     </form>
   </div>
+  <AppBanner
+    appTitle="My App"
+  />
 </header>
 `;
