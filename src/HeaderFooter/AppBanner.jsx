@@ -25,11 +25,7 @@ const bannerCSS = {
 };
 const AppBanner = (props) => {
   const { appTitle } = props;
-  return (
-    <div role='contentinfo' style={bannerCSS}>
-      {appTitle}
-    </div>
-  );
+  return <div style={bannerCSS}>{appTitle}</div>;
 };
 // AppBanner.propTypes = {
 //   appTitle: PropTypes.string.isRequired,

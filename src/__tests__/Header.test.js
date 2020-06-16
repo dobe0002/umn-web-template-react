@@ -18,8 +18,15 @@ describe('UMN Header', () => {
     // console.log('Axe violations', results.violations);
     expect(results).toHaveNoViolations();
   });
+  it('Accessibility check with app banner', async () => {
+    const header = mount(<Header appTitle='My App' />);
+    const results = await axe(header.getDOMNode());
+
+    // console.log('Axe violations', results.violations);
+    expect(results).toHaveNoViolations();
+  });
   it('Header renders correctly', () => {
-    const header = shallow(<Header />);
+    const header = shallow(<Header appTitle='My App' />);
     // console.log(header.html());
     expect(header).toMatchSnapshot();
   });
