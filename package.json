@@ -1,8 +1,6 @@
 {
   "name": "@dobe0002/umn-web-template-react",
-
   "version": "1.0.3",
-
   "main": "compiled/bundle.js",
   "repository": "https://github.com/dobe0002/umn-web-template-react",
   "publishConfig": {
