@@ -2,6 +2,7 @@
 
 exports[`Application Banner AppBanner renders correctly 1`] = `
 <div
+  id="umnHeaderAppBanner"
   style={
     Object {
       "background": "linear-gradient( to bottom, #f0e9d1 0%,#ffde7c 100%)",

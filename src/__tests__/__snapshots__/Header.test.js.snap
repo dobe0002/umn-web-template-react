@@ -69,30 +69,34 @@ exports[`UMN Header Header renders correctly 1`] = `
         color="#fff"
       />
     </div>
-    <form
-      action="https://usearch.umn.edu/"
-      className="umnHeaderSearchForm"
-      id="search-form"
-      name="gs"
+    <div
+      id="umnHeaderSearchForm"
     >
-      <input
-        aria-label="Search for"
-        className="umnHeaderSearchInput"
-        maxLength="256"
-        name="query"
-        placeholder="Search"
-        type="text"
-      />
-      <button
-        aria-label="Submit Search"
-        className="umnHeaderSearchButton"
-        name="submit"
-        type="submit"
-        value="search"
+      <form
+        action="https://usearch.umn.edu/"
+        className="umnHeaderSearchForm"
+        id="search-form"
+        name="gs"
       >
-        <SearchIcon />
-      </button>
-    </form>
+        <input
+          aria-label="Search for"
+          className="umnHeaderSearchInput"
+          maxLength="256"
+          name="query"
+          placeholder="Search"
+          type="text"
+        />
+        <button
+          aria-label="Submit Search"
+          className="umnHeaderSearchButton"
+          name="submit"
+          type="submit"
+          value="search"
+        >
+          <SearchIcon />
+        </button>
+      </form>
+    </div>
   </div>
   <AppBanner
     appTitle="My App"

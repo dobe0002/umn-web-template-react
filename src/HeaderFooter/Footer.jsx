@@ -28,7 +28,12 @@ const Footer = (props) => {
       ? 'University copyright information'
       : label;
   return (
-    <footer role='contentinfo' style={footerCSS} aria-label={displayLabel}>
+    <footer
+      role='contentinfo'
+      style={footerCSS}
+      aria-label={displayLabel}
+      id='umnFooter'
+    >
       <MainNavLinks mode='footer' />
       <p>
         &copy;

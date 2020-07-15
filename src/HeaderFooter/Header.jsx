@@ -74,31 +74,33 @@ const Header = (props) => {
           </a>
           <MainNavLinks color='#fff' />
         </div>
-        <form
-          className='umnHeaderSearchForm'
-          id='search-form'
-          name='gs'
-          action='https://usearch.umn.edu/'
-        >
-          <input
-            className='umnHeaderSearchInput'
-            type='text'
-            name='query'
-            maxLength='256'
-            placeholder='Search'
-            aria-label='Search for'
-          />
-
-          <button
-            className='umnHeaderSearchButton'
-            type='submit'
-            name='submit'
-            value='search'
-            aria-label='Submit Search'
+        <div id='umnHeaderSearchForm'>
+          <form
+            className='umnHeaderSearchForm'
+            id='search-form'
+            name='gs'
+            action='https://usearch.umn.edu/'
           >
-            <SearchIcon />
-          </button>
-        </form>
+            <input
+              className='umnHeaderSearchInput'
+              type='text'
+              name='query'
+              maxLength='256'
+              placeholder='Search'
+              aria-label='Search for'
+            />
+
+            <button
+              className='umnHeaderSearchButton'
+              type='submit'
+              name='submit'
+              value='search'
+              aria-label='Submit Search'
+            >
+              <SearchIcon />
+            </button>
+          </form>
+        </div>
       </div>
       {appTitle !== undefined && appTitle !== '' && (
         <AppBanner appTitle={appTitle} />

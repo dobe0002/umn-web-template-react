@@ -39,7 +39,10 @@ const SkipLinks = (props) => {
   `;
   if (props.mainNavId || props.mainContentId) {
     return (
-      <div className='headerLinks umnHeaderSkipLinksWrapperDiv'>
+      <div
+        className='headerLinks umnHeaderSkipLinksWrapperDiv'
+        id=' umnHeaderSkipLinks'
+      >
         <style
           dangerouslySetInnerHTML={{
             __html: SkipLinksCSS,
