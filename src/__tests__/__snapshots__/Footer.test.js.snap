@@ -3,6 +3,7 @@
 exports[`UMN Footer Footer renders correctly 1`] = `
 <footer
   aria-label="UMN Copyright"
+  id="umnFooter"
   role="contentinfo"
   style={
     Object {
