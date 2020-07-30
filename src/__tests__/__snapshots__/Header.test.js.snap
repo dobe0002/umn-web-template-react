@@ -51,6 +51,11 @@ exports[`UMN Header Header renders correctly 1`] = `
   background-color: #7a0019;
   border: none;
 }
+@media print{
+  #search-form {
+    display: none;
+  }
+}
 ",
       }
     }

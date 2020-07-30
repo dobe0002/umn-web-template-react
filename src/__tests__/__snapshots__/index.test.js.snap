@@ -54,6 +54,11 @@ exports[`Index - entry point All items renders correctly 1`] = `
   background-color: #7a0019;
   border: none;
 }
+@media print{
+  #search-form {
+    display: none;
+  }
+}
 ",
             }
           }
@@ -83,6 +88,7 @@ exports[`Index - entry point All items renders correctly 1`] = `
                       {fill:#ffcd34;}
                       .cls-2
                       {fill:#fff;stroke:#fff;stroke-miterlimit:10;stroke-width:0.2px;}
+                      @media print{.cls-1{fill:#333333} .cls-2{fill:#333333;stroke:#333333}}
                     </style>
                   </defs>
                   <title />
@@ -308,6 +314,10 @@ exports[`Index - entry point All items renders correctly 1`] = `
   color: #fff;
 }
 
+@media print{
+  .umnHeaderMainNavLinksUl-header{display:none !important}
+}
+
       ",
                     }
                   }
@@ -497,6 +507,10 @@ exports[`Index - entry point All items renders correctly 1`] = `
 .umnHeaderMainNavLinksA-header:focus {
   text-decoration: underline;
   color: #fff;
+}
+
+@media print{
+  .umnHeaderMainNavLinksUl{display:none !important}
 }
 
       ",
