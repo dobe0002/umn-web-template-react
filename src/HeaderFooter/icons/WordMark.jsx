@@ -25,6 +25,9 @@ const WordMark = (props) => {
           {'{fill:#ffcd34;}'}
           .cls-2
           {'{fill:#fff;stroke:#fff;stroke-miterlimit:10;stroke-width:0.2px;}'}
+          {
+            '@media print{.cls-1{fill:#333333} .cls-2{fill:#333333;stroke:#333333}}'
+          }
         </style>
       </defs>
       <title>{title}</title>

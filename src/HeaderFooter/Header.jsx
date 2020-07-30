@@ -56,6 +56,11 @@ const HeaderCSS = `
   background-color: #7a0019;
   border: none;
 }
+@media print{
+  #search-form {
+    display: none;
+  }
+}
 `;
 const Header = (props) => {
   const { mainContentId, mainNavId, appTitle } = props;

@@ -77,6 +77,10 @@ const MainNavLinks = (props) => {
   color: #fff;
 }
 
+@media print{
+  .${ulClassName}{display:none !important}
+}
+
       `;
 
   return (
