@@ -4,6 +4,7 @@ React versions of the University of Minnesota web template items that can easily
 
 - UmnHeader - Contains the institutional, maroon header with search bar. Also contains an optional application banner.
 - UmnFooter - Contains the institutional text footer with copyright statement and privacy policy link.
+- UmnAppBanner - Contains just the application banner.
 
 ---
 
@@ -19,7 +20,7 @@ In the project that you would like to include the UofM web template components, 
 
 ```
 dependencies: {
-  "@dobe0002/umn-web-template-react": file:/"path_to_tgz_file",
+  "umn-web-template-react": file:/"path_to_tgz_file",
 }
 ```
 
@@ -27,7 +28,7 @@ For example:
 
 ```
 dependencies: {
-  "@dobe0002/umn-web-template-react": "file:/./packages/dobe0002-umn-web-template-react-1.0.0.tgz"
+  "umn-web-template-react": "file:/./packages/umn-web-template-react-1.0.0.tgz"
   ...
 }
 ```
@@ -52,7 +53,7 @@ In order to use these web components, you need to ensure that the following are 
 On the React file that you want to use the web components, include the modules you want to use. For example:
 
 ```
-import { UmnHeader, UmnFooter } from '@dobe0002/umn-web-template-react';
+import { UmnHeader, UmnFooter } from 'umn-web-template-react';
 ```
 
 Then use the modules a normal React modules:
@@ -95,6 +96,16 @@ The following props can be passed. All are optional unless specified otherwise.
 - `year` - String. Copyright year. Will default to the year the footer component was last updated.
 - `label` - String. ARIA label to describe to screen readers the content of the footer. Will default to "University copyright information"
 
+### UmnAppBanner
+
+The application banner.
+
+#### Props
+
+The following props can be passed. All are optional unless specified otherwise.
+
+- `appTitle` - String. Application title
+
 ---
 
 ---
@@ -131,7 +142,7 @@ You can check for any high or critical known security vulnerabilities in the dep
 
 ## Running development server
 
-In order to make development easier, there is sample component that contains the modules in this packge (located at `src/App.jsx`). To view this component in a browser, type `npm run start` in a terminal window while at the root of the project. This will start the development server at `http://localhost:3000` at and load the page in a browser.
+In order to make development easier, there is sample component that contains the modules in this package (located at `src/App.jsx`). To view this component in a browser, type `npm run start` in a terminal window while at the root of the project. This will start the development server at `http://localhost:3000` at and load the page in a browser.
 
 Any change to a file will cause the application to be re-build an automatically show those changes in the browser.
 

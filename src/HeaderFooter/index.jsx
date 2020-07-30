@@ -4,6 +4,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
+import AppBanner from './AppBanner';
 
 const UmnHeader = (props) => {
   const { mainNavId, mainContentId, appTitle } = props;
@@ -39,4 +40,14 @@ const UmnFooter = (props) => {
 //   year: undefined,
 // };
 
-export { UmnHeader, UmnFooter };
+/* *********************************************************************************************************** */
+const UmnAppBanner = (props) => {
+  const { appTitle } = props;
+  return <AppBanner appTitle={appTitle} />;
+};
+
+// AppBanner.propTypes = {
+//   appTitle: PropTypes.string.isRequired,
+// };
+
+export { UmnHeader, UmnFooter, UmnAppBanner };
